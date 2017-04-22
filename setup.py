@@ -86,7 +86,8 @@ setup(
     ext_package="",
     cffi_modules=[
         os.path.join(here, "build_ext.py:ffi")
-    ]
+    ],
+    test_suite='tests',
 
     # Although 'package_data' is the preferred approach, in some case you may
     # need to place data files outside of your packages. See:

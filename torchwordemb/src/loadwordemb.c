@@ -104,4 +104,36 @@ int load_word2vec(THFloatTensor *dest, const char * filename, size_t o){
     fclose(fp);
     return n_word;
 }
+int load_word2vec_bin(THFloatTensor *dest, const char * filename, size_t o){
+    PyObject *obj = (PyObject*) (void*)(uintptr_t) o;
+
+    FILE *fp = fopen(filename, "rb");
+
+
+    if( fp == NULL ){ 
+        return -1;
+    }
+
+    size_t dim, n_word;
+    fscanf(fp, "%zu %zu", &n_word, &dim);
+    //printf("%zu %zu\n", n_word, dim );
+
+    THFloatTensor_resize2d(dest, n_word, dim);
+
+    char buf[512];
+    float * data = THFloatTensor_data(dest);
+    for( int i = 0; i < n_word; i++ ){
+
+        float *vector = data + dim * i;
+
+        fscanf(fp, "%s", buf );
+        PyDict_SetItem(obj, PyUnicode_FromString(buf), PyLong_FromLong((long)i) );
+
+        fgetc(fp); // delete ' '
+
+        fread( vector, sizeof(float), dim, fp );
+    }
+    fclose(fp);
+    return n_word;
+}
 

@@ -26,3 +26,8 @@ class TestGlove(unittest.TestCase):
 
         self.assertEqual(vec.size(0), 113)
         self.assertEqual(vec.size(1), 100)
+
+
+if __name__ == '__main__':
+        unittest.main()
+#

@@ -115,7 +115,7 @@ int load_word2vec_bin(THFloatTensor *dest, const char * filename, size_t o){
     }
 
     size_t dim, n_word;
-    fscanf(fp, "%zu %zu", &n_word, &dim);
+    fscanf(fp, "%zu %zu\n", &n_word, &dim);
     //printf("%zu %zu\n", n_word, dim );
 
     THFloatTensor_resize2d(dest, n_word, dim);

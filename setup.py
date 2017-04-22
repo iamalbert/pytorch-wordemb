@@ -39,7 +39,7 @@ setup(
     author_email='wlzhuang@nlg.csie.ntu.edu.tw',
 
     # Choose your license
-    license='MIT',
+    license='GPL',
 
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[

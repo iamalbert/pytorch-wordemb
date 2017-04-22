@@ -2,7 +2,6 @@ import unittest
 
 import torchwordemb
 
-
 class TestGlove(unittest.TestCase):
     def test_glove_text(self):
         word, vec = torchwordemb.load_glove_text("resource/glove.test.txt")
@@ -19,3 +18,11 @@ class TestGlove(unittest.TestCase):
 
         self.assertEqual(vec.size(0), 10)
         self.assertEqual(vec.size(1), 300)
+
+    def test_word2vec_bin(self):
+        word, vec = torchwordemb.load_word2vec_bin("resource/word2vec.test.bin") 
+
+        self.assertEqual(len(word), 113)
+
+        self.assertEqual(vec.size(0), 113)
+        self.assertEqual(vec.size(1), 100)

@@ -16,7 +16,7 @@ pip install torchwordemb
 import torchwordemb
 ```
 
-### wordemb.load_word2vec_bin(path)
+### torchwordemb.load_word2vec_bin(path)
 read word2vec binary-format model from `path`.
 
 returns `(vocab, vec)`
@@ -29,8 +29,8 @@ print(vec.size())
 print(vec[ w2v.vocab["apple"] ] )
 ```
 
-### wordemb.load_word2vec_text(path)
+### torchwordemb.load_word2vec_text(path)
 read word2vec text-format model from `path`.
 
-### wordemb.load_glove_text(path)
+### torchwordemb.load_glove_text(path)
 read GloVe text-format model from `path`.

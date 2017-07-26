@@ -26,9 +26,9 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.7',
+    version='0.0.8',
 
-    description='Load pretrained word embeddings (word2vec, glove format) into torch.FloatTensor for PyTorch',
+    description='Load pretrained word embeddings (word2vec, glove format) into torch.FloatTensor of PyTorch',
     long_description=long_description,
 
     # The project's main homepage.

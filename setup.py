@@ -83,7 +83,7 @@ setup(
             'torchwordemb': ['*.c', '*.h', '_torchwordemb/*.py'],
     },
     ext_package="",
-    install_requires=["cffi>=1.0.0", 'torch'],
+    install_requires=["cffi>=1.0.0"],
     setup_requires=["cffi>=1.0.0"],
     cffi_modules=[
         os.path.join(here, "build.py:ffi")

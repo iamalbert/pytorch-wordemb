@@ -86,7 +86,7 @@ setup(
     install_requires=["cffi>=1.0.0"],
     setup_requires=["cffi>=1.0.0"],
     cffi_modules=[
-        os.path.join(here, "build.py:ffi")
+        os.path.join(path.dirname(__file__), "build.py:ffi")
     ],
     test_suite='tests',
 

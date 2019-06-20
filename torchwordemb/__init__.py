@@ -1,2 +1,0 @@
-from .wordemb import *
-

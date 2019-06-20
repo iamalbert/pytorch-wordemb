@@ -1,6 +1,8 @@
 import unittest
 
+import torch
 import torchwordemb
+
 
 class TestGlove(unittest.TestCase):
     def test_glove_text(self):
@@ -29,5 +31,6 @@ class TestGlove(unittest.TestCase):
 
 
 if __name__ == '__main__':
+        print(dir(torchwordemb)) #.__path__)
         unittest.main()
 #

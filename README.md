@@ -13,6 +13,7 @@ pip install torchwordemb
 ## Usage
 
 ```python
+import torch
 import torchwordemb
 ```
 

@@ -61,7 +61,7 @@ VocabAndTensor load_glove(const char * filename){
         dim    = get_tokens_in_first_line(fp) - 1;
         n_word = get_line_numbers(fp);
 
-        dest.resize_(torch::IntArrayRef{n_word, dim});
+        dest.resize_(torch::IntArrayRef{static_cast<long long>(n_word), static_cast<long long>(dim)});
 
         char buf[512];
         float * data = static_cast<float*>(dest.storage().data());
@@ -98,7 +98,7 @@ VocabAndTensor load_word2vec(const char * filename){
         size_t dim, n_word;
         fscanf(fp, "%zu %zu", &n_word, &dim);
 
-        dest.resize_(torch::IntArrayRef{n_word, dim});
+        dest.resize_(torch::IntArrayRef{static_cast<long long>(n_word), static_cast<long long>(dim)});
 
         char buf[512];
         float * data = static_cast<float*>(dest.storage().data());
@@ -136,7 +136,7 @@ VocabAndTensor load_word2vec_bin(const char * filename){
         fscanf(fp, "%zu %zu\n", &n_word, &dim);
         //printf("%zu %zu\n", n_word, dim );
 
-        dest.resize_(torch::IntArrayRef{n_word, dim});
+        dest.resize_(torch::IntArrayRef{static_cast<long long>(n_word), static_cast<long long>(dim)});
 
         char buf[512];
         float * data = static_cast<float*>(dest.storage().data());
